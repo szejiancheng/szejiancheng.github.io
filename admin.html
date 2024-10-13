@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Dashboard</title>
+    <link rel="stylesheet" href="adminstyles.css">
+</head>
+<body>
+    <a id="home-button" href='index.html'>ecoMapper</a>
+
+    <h1 class="dashboard-title">Administrator Dashboard</h1>
+    <div class="admin-dashboard">
+        <!-- Add Node Section -->
+        <button class="toggle-button" id="btn1">Add Node</button>
+        <div class="form-container" id="form1">
+            <form id="addNodeForm">
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type">
+
+                <label for="continent">Continent:</label>
+                <input type="text" id="continent" name="continent">
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country">
+
+                <label for="country_code">Country Code:</label>
+                <input type="text" id="country_code" name="country_code">
+
+                <label for="terminal_name">Terminal Name:</label>
+                <input type="text" id="terminal_name" name="terminal_name">
+
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude">
+
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude">
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Add Connection Section -->
+        <button class="toggle-button" id="btn2">Add Connection</button>
+        <div class="form-container" id="form2">
+            <form id="addConnectionForm">
+                <label for="terminal_origin">Origin Terminal:</label>
+                <div class="search-container">
+                    <input type="text" id="originSearchBar" class="search" placeholder="Search by port or country" oninput="filterOriginDropdown()" autocomplete="off">
+                    <ul id="originDropdown" class="dropdown-content"></ul>
+                </div>
+
+                <label for="terminal_destination">Destination Terminal:</label>
+                <div class="search-container">
+                    <input type="text" id="destinationSearchBar" class="search" placeholder="Search by port or country" oninput="filterDestinationDropdown()" autocomplete="off">
+                    <ul id="destinationDropdown" class="dropdown-content"></ul>
+                </div>
+
+                <label for="duration_hours">Duration (hours):</label>
+                <input type="text" id="duration_hours" name="duration_hours">
+
+                <label for="distance_km">Distance (km):</label>
+                <input type="text" id="distance_km" name="distance_km">
+
+                <label for="fin_cost_usd_per_tonne">Financial Cost (USD/tonne):</label>
+                <input type="text" id="fin_cost_usd_per_tonne" name="fin_cost_usd_per_tonne">
+
+                <label for="env_cost_kt_co2_per_tonne">Environmental Cost (kt CO2/tonne):</label>
+                <input type="text" id="env_cost_kt_co2_per_tonne" name="env_cost_kt_co2_per_tonne">
+
+                <label for="mode">Mode:</label>
+                <select id="mode" name="mode">
+                    <option value="land">Rail</option>
+                    <option value="land">Road</option>
+                    <option value="sea">Sea</option>
+                    <option value="air">Air</option>
+                </select>
+
+                <label for="vehicle">Vehicle:</label>
+                <input type="text" id="vehicle" name="vehicle">
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Remove Node Section -->
+        <button class="toggle-button" id="btn3">Remove Node</button>
+        <div class="form-container" id="form3">
+            <form id="removeNodeForm">
+                <label for="remove_node">Select Node:</label>
+                <div class="search-container">
+                    <input type="text" id="removeNodeSearchBar" class="search" placeholder="Search by port or country" oninput="filterRemoveNodeDropdown()" autocomplete="off">
+                    <ul id="removeNodeDropdown" class="dropdown-content"></ul>
+                </div>
+
+                <div id="nodeDetails"></div>
+
+                <input type="submit" value="Remove Node">
+            </form>
+        </div>
+
+        <!-- Remove Edge Section -->
+        <button class="toggle-button" id="btn4">Remove Edge</button>
+        <div class="form-container" id="form4">
+            <form id="removeEdgeForm">
+                <label for="remove_edge">Select Edge:</label>
+                <div class="search-container">
+                    <input type="text" id="removeEdgeSearchBar" class="search" placeholder="Search by edge" oninput="filterRemoveEdgeDropdown()" autocomplete="off">
+                    <ul id="removeEdgeDropdown" class="dropdown-content"></ul>
+                </div>
+
+                <input type="submit" value="Remove Edge">
+            </form>
+        </div>
+    </div>
+
+    <script src="adminscript.js"></script>
+</body>
+</html>
