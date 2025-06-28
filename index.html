@@ -1,51 +1,356 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecoMapper</title>
-    <link rel="icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxESEhMTEhESEhUXGBYZGBYXFxcZFhgZFRoXFxUXFRwaHCgjGBolGxUXITUhJisrLi4zGB81ODMtNygtLisBCgoKDg0OGhAQGi0mHyUtLS0tLS0tKys1LS0tLTUtLS0tLS0tLS03LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcEBQECCAP/xABHEAABAwIDBgMDBwYNBQAAAAABAAIDBBEFEiEGBxMxUWEiQXEycoEUYnOCkaGxI1KDkpTwFTM1QkNUVWOywdHS0xYXJFOT/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAfEQEBAAICAwEBAQAAAAAAAAAAAQIREiExQVEDYTL/2gAMAwEAAhEDEQA/ALxREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARRXehWSQ4ZUyRPdG8cMBzTZwD5WNdYjUGziLjqqA/6irv69WftE3+5amO2Ms9PVKLyt/1FXf16s/aJv8Acrq3LYjNPQyGaWSYtne0OkcXODckTrZjqRdx59UuOjHPd0n6Iiy2IiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIoXvB28/gx0LRT8d0oedZOGGhmUc8jrkl3TyVk2luk0VK7y9t8Rp8QlhgqTFGxsdmhkZ1cxrySXsJvd33BZP8A3ud/Zzf2k/8ACq82tx011VJUmPhZ8ngzZ7ZGNZ7WUXvlvy81vHG77c885rp98U20xGpidDPVOkjdbM0siF8pDhq1gPMA8/JaBEXRy2LdYLtXXUbDHTVDomFxcWhkbruIDSbvYTyaPsWlRBYGyW3+JyVtLHJVGRj5Y2OaY4gC17g06tYCDrfQ+SvxeUMGr/k9RDPlz8KRkmW+XNkcHWvY2vbnYqzf+9zv7Ob+0n/hXPLHfh1wz15XEir/AGF3lfwjUmndS8E5HPDhLxAcpaCCMjbe135KwFizTpLL4ERFFEREBERAREQEREBERAREQEREBERAVL7/AH+Oo/o5v8UauhUvv9/jqP6Ob/FGtYeWP0/yi2z2xD6uBswrKKIEuGSSQh4ykjxC2l7XHYjqu2O7CvpYHzGtopA23gZIS91yB4RbU63t2KiJaOiBo6Lr247nxypRs5sW+sh4rayjhGYtySSEPGXzItpfyUYAuQBqSbADmSeQA8yphgW7SvqbPkY2ljNhnn8LjfQBsftXvbR2XmlI4xnYF9PDJMa6hkDBfIyQ53dmi2p7KHqc43uqroLuh4dW1vtcLwyNNr6sJ6EciTryUJljcxxa9rmOHNrgWuHqDqElLNekj2Z2PdWxOkbV0kNnFuWWQh+gBva3LX7is3Fd3z4IZJjXUDwxpdlbKczsovlbpq48gPM2UMIC4DR0Cdm58T7cn/Kf6CX8Y1f6oDcn/Kf6CX8Y1f655+XX8/AiIsOgiIgIiICIiAiIgIiICIiAiIgIiICpff7/AB1H9HN/ijV0Eqrt4uLYI+aN9S99XJCHNEEDrtu4tJ4rmkAEFo0zddCtY+WM/CnsMw2eofw4IpJn9GNJtfkXHk0dzYKZRbv46ZokxWtjpARcQxkPnd6aEX90PCx8S3j1JZwaOOLD4ByZC0Z/i+wt6tAPdQ2WRznFznOc52pc4kuJ6knUlde3HqJ47bejowW4VQsY7l8pqPHKeuUXuAeftW+ao/DtBU1FZSy1M8kpbUQOGY+FuWRp8LRZrfgAtEB9wuewHMnsuM5bqOY1HqNQmjlUw25xaaHF6yWCaSF/EYMzHEXyRsbZw5OHh5G4WZDvBjqGiPFaKKsaBYTRgRztHaxAv7pYovtTUcStq38w6eYj0zuDfuAWstyPW9u9tDbqmjldp8diKOsu7Cq9j3c/k1R4JR1ym1yBy9kj5yiGM4HVUjstTBJCToC4eF3uvF2u+BWAOYPmDcHzBHIjoVLsG3iV0LeFMWVsJFjFUDPcdA/n+tmHZOzqs7cn/Kf6CX8Y1f6qDYjG8CFUKiMPw+Ytcwxvd/45z5blrjo22UW9jz0VuseCAQQQeRGoPouWfl2w8OyIiy2IiICIiAiIgIiICIiAiIgIiIMavr4oGGSaVkTBzc9wa37Sq62i3w00d20kTqh357rsiHpfxO+wA9VVO109S+rnFU975GSSN8RJDQHGwjB9llrEAeVlp11mEcb+l9N/tDtnX1txPOch/oo/BF6EA3cPeJWgCLtl0v8Av++q25726oiIJnu922jw0VAfTcbihtiCAbtBGV1/5hvftrob6Q6R1yTYNuSbDQC5vYdAOS2OAYBU1snDpojIRbMeTGA+b3HQenM2NgVYlHucDW5quvZH2jaAAffedf1Qs2yNSWqocb37qa7T7cR1eH09G2lEbouHd9xlHDbl/JAai99b8hca81JZ9z0Mjb0uIBxHk5rXg/Fjhl+wqB4/spVUEjRUx2YTYStOaJ3YO/mns4A803KasaFFmVQbl5AHytYfgOX2rDWmRbfANpqyiP8A40742+cZ8UZ63Y7TXqLHutQiC5Nnd8sbrNrYTGfOWK7mepYfE0ehcrKwnGKeqZnp5o5m9WOBt2cObT2Nl5RX3oqiWN7XwPkZLoGmMkPuToARzubaeaxcI3P0vt61RfChD+GziEGTK3ORyLrDNbte6+65O4iIgIiICIiAiIgIiICIiCj9+WCcOpjqmjwztyv+kjGhPcst/wDMqs16X3i4H8soJo2i8jRxI+uePUAe8MzfrLzQ031C7YXccP0mq7wgXF/300+9fc6gA29r/T/T8Firkk9StMMllsxv5afAX17eS2GzuDPrKqOCOwL+buYa1ur3m3QeXM3HmbrTXVrbjaZoFbVP1yNawHzAs6ST7bR/YpeouM3dNjtVtNFhMbcPw9rRJa75CA4svbxOv7crgQddALacgqoq6uSocHzPdK517ueS48xoL+Wp9PJY1dXPnkfNISXyOc92vm8kkDtrb0C3Gw+zb8QqmQgubG3xSvH82O+oB8nO5D1J8ipJpbd1rooZKdsUzbxOfd0ZaS1+UENDwWkENLg8c9ch7KzdiNtxVgUGIhszZQGtkcB4ieTJe50s8W1sOdionvBw2qNTPL8kmhpossURMbmxtiitGzKSLZXG5HvqIBxHIkeYINiD5EdCmtw3xqUbb7NmgqnRi5jLc0Tj5t8WhP5zSLH4HS60DxofS/4/6K095TvleDUNaQOIOGXEf3rMsgHbiNYfqqo7pj4MuqyXWDdP37/53/cY7mkc1xmPK5t0S60y4U03SYJ8pxBjnC8dOOK7pmBtEPXN4vqFQtX/ALmcE4FAJnDx1J4n6MaRD0td/wCkWcrqNYTdT1ERcXoEREBERAREQEREBERAREQF5o3i4J8jxCeMCzHnix+5ISbDsHB7fRoXpdVlvywTiU0dU0eKB2V/0cpA+Nn5Pg5y1hdVj9JuKQREXZwFbW42ZskVfTE2Lgxw9HtdG63pZv6wVSrd7G7QOoKuOoALmi7ZGjm6N1swHcWDh3aFMpuLjdVp5ad0bnRvFnsJY4dHMJa4faCpJsVtFXQPZTUb2MM8rGk8NjnEuIYCSRezQSbchr1Kme8bYz5WBiWHWnbI0OkYzm7S3EjHm6ws5nO45XuFWWFYg6mlMjNJWB7WnkY3uBYXW/OaHOsPI2Pkm9xdcam++Daz5TP8kideGA+IjlJKND6hmo9S7oFXZNlwSANdArK3bbAPe9tZWt4NPH42tk8JkLdQ54Psxi19edunN1jDvKtpt8w0uA0VK/SR3BDm+YLWmR/2OsPiqiUt3lbVDEKq8Z/IRAsi+dc3fJbyzED4Nb53USTGdJld0REVRsdnsJdV1MFM2/5R4aSOYaNZHfBgcfgvVEETWNa1oDWtAAA5AAWAHwVPbiMEu+escNGjgx+ps6U/AZBfu5XIuWd7dvznWxERYdBERAREQEREBERAREQEREBYuKUDKiGWGQXZIxzHejgQbd9Ur8Sggbmnmihb1ke1g+1xC+OHY5SVBIgqYJiOYjkY8j1DSUHlvEKJ8EskMntxvcx3q0kXHY2uOxCx1ZO+/A+FVMqmjwzts76SMAXPqzL+oVENmtlquvcRTx3a3R0jjlib2c7zPYAnXku8vW3ms1dNKinbt31O05H41hzJPNmZuh6XMgP3LUbS7E1lE3iSNZLCeU0Jzx68s2gLfUi3dNw4112S2yq8PceC4OjJu6F9ywnzItqx1vMfEGwU7dvBwWssa7DyJLauMbJfgHiz7fAKpI2FxDWgucSAGgEuJPIADUnsFNabdtO1gkraqlw9p5CZ4z/EXDR+tfsFLIuNvpJmbbYBSnPS0BdIOThCxpH13m4+AKh+2O8CrxAcN1oIP/Swk5unEcbF/pYDtcXWa7ds+RpNFX0VcW6lkbw13w8Thf1IULrKWSJ7o5WOje02cxws4HuP8+RSSFuT4ot5s1snWV5PyeMZG6OlecsTT0LrG57NBI81vzu+pwcjsbw5snLJmbz6X4gP3K7iTG1BFyAToASfIDUk+QHdSHabYysoQHysa+E2tNEc8evK5sC2+nMW10JWfuowP5ViEZcLxwflndLtP5Ieuch31Cm+tmrvS8djcFFFRwU+mZrbvPWR/ikPpmJt2st0sPEcVp6cAzzwwg8jI9rL+mYi664bjFNUX4FRDNbnw5GPt65SbLi9H8ZyIiiiIiAiIgIiICIiAiIgKo9o970sc01NT0gD2PfG18jy5xc0lt+E1oPMXAzdPRW4ughbfNlbm62F/tVliWW+FKYFu4rcRcarEZpYs/LMAZ3D3TpC3o23XwhZWPbn5Im8WgqJJJGahj8rXkjzjkblDXetvUK1cUxmmpgDUVEUIPLiPa2/ugnX4L44ZtLRVLssFVBK781sjS63XLe9lrlWeGKmZt4kzYxS4rh8dW6M3AmJikBAIDnAxuBNiRmAFwfPmev8J4jjAbS0VO2lpBoY4rtgA8+LIAA4fMA1/NPNXzLC13tNa71AP4rto0eQAHoAB+Ccp8ThfdVXT7lIMgD6ybiW5tYwR390gm31lHJKbFcAe6wFRSOvm8JdTvB552/0L/uPzlbcm2uGNdlNfSgjQ/lWWHqb2C3NPOyRoex7XtdqHNIc0jsRoU5X2vCelCU+8OFhvQ4RSU9Q4ENkaeI4X55GNjafgD8CtpgO7KsryanEppYi/wAiA6dw8s2bSJvRttOjVc8dOxpu1jWnqAAViYpjdLTW+UVEMN+Qe9rSfdBNz8E5fDh9VTj+6KWACbD6iSSRmoY6zJdPOKRtgHdjb18lpZ9vzZsWKYZBVzRjKHzfkZQOjwY3fdYdldmF7R0dScsFVBK7nlY9pdbrlvey2EsDHe01rvUA/inL6cPihvlmJY1kp6WBtNRt0yR3bTtH948AcT3APq+alEe5SDJZ1ZNxLcwxgjv7p1t9ZWk4taLmzQB2AAH4BaN22uGB2U19Lf6VlvtvZOV9HCe1SOZimAvcxzBUUjr3BBdTPB5358F5vqDob/zrXXWk3lCNr48OwynpZZbAujdxCSL2yxtjbcjMbDUC/Iq+IZWPaHMc17XDQggtI7EaEJHTsbq1jWnsAPwTl9icL6qmcA3W1VYTU4jPJE5+uU2dOeheXXDB0bY2+bay74/umnprT4fPJI9muU2ZMLecb22BPzbDz1PJWtiuO0lNb5RUwwk8g97Wk+gJuV1wraGjqSRT1MMxGpax7S4DqW3vZOVOGKp8O3w1VOBFWUnEkbYOdcwy2+dGWEF/bwg9ldTHXAOov15/FdXwtcQS1pI5EgEj06Lus2ytyWeRERRRERAREQEREBERAVQbR71qsTz0tNRhsjHvjaXZpJDlJbmEQaNTa41I1HNW+uLKyxLLfCl9nt2FVWuNTic0sZfrl0M7uheXXEY6NsbdG2ssvaHc4Gsz0M8hkbqGSlupGoyPaG5HdL/aOat5FedZ4RR1HvOxKgHArabiOboHTZopNOrrESe8Br1PNfGprsXx54jZHwaa4vYObBbrI86zH5o7aDmr2IXKvKfDhfdVhBuWpAwB9VUuktq5vDa2/ZpYSB2Lj6qMy4Vi2Ayl9Peencbkta50TvpWA3id84HpqeSvVFOV9nCelIz74a2dvCpqSNsp0BaXzO9WsDRr639Cvvs7urqKsuqMSmljc83ygtdMe8jnXDfdsbDpayuYBcpy+HD7VP7R7njG3i4fPI6RniEchaHEjlwpGhuVw8r/AGha+k3p4jRDg1lMJHt0Dpc0Mhtp4vCQ/wB4AX781eC4ITl9OHxRM82L4+8MycGmuDyc2AfOcTrM7sO2jealMe5ejyWdU1Jfb2hww2/ZpYTbtf4qzkTlfRwntRJocXwCUuiBnpibkhrnQu7vYDeF/e9uWruSyKje7XVDeFS0rGSu0zMzTPHdjMvP1BHZXcuAFeX2HC+qpvZ3dPNUXnxKaVj3m+Rpa6Y95XuzAH5ov6jkO+0e6F8IE2HTyvezxBj3NbJccjFI0NyuHQ/aFcSKc6cIpKg3rYhS2hrKTivBA8QdFM7y9nKQ93QgC+nqrsY64BsRfyPP4oQuVLZVksERFGhERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/9k=" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Maps API (replace YOUR_API_KEY with your actual API key) -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWfhqLQoGZq0Zbm9plAqL9blLo4tQkvK0&callback=initMap" async defer></script>
-    <!-- Link to the external script file -->
-    <script src="script.js" defer></script>
-    <script src="api.js" defer></script>
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Story by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <!-- Flag Icon CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
 
-</head>
-<body>
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Story</h1>
+							<p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/banner.jpg" alt="" />
+						</div>
+					</section>
 
-    <a id="adminLink" href="admin.html">Administrator Page</a>
+				<!-- Two -->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+						<div class="content">
+							<h2>Magna etiam feugiat</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/spotlight01.jpg" alt="" />
+						</div>
+					</section>
 
-    <!-- The map will be behind all content -->
-    <div id="map"></div>
-    
-    <!-- Overlay content (for search) -->
-    <div class="overlay">
-        <h1>ecoMapper</h1>
+				<!-- Three -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Tempus adipiscing</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/spotlight02.jpg" alt="" />
+						</div>
+					</section>
 
+				<!-- Four -->
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Pharetra etiam nulla</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/spotlight03.jpg" alt="" />
+						</div>
+					</section>
 
-    
-    </div>
+				<!-- Five -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Massa sed condimentum</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+						</div>
 
-        <!-- Search bar container -->
-        <div class="search-container">
-            <!-- Search bar -->
-            <input type="text" id="searchBar" class="search" placeholder="Search by port or country" oninput="filterDropdown()" autocomplete="off">
-            <!-- Dropdown to show the results -->
-            <ul id="dropdown" class="dropdown-content"></ul>
-        </div>
-    <!-- Separate top-right overlay for selected journey -->
-    <div id="journey" class="journey">
-        <h2>Journey:</h2>
-        <ul></ul>
-    </div>
+						<!-- Gallery -->
+							<div class="gallery style2 medium lightbox onscroll-fade-in">
+								<article>
+									<a href="images/gallery/fulls/01.jpg" class="image">
+										<img src="images/gallery/thumbs/01.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Ipsum Dolor</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/02.jpg" class="image">
+										<img src="images/gallery/thumbs/02.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Feugiat Lorem</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/03.jpg" class="image">
+										<img src="images/gallery/thumbs/03.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Magna Amet</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/04.jpg" class="image">
+										<img src="images/gallery/thumbs/04.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Sed Tempus</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/05.jpg" class="image">
+										<img src="images/gallery/thumbs/05.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Ultrices Magna</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/06.jpg" class="image">
+										<img src="images/gallery/thumbs/06.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Sed Tempus</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/07.jpg" class="image">
+										<img src="images/gallery/thumbs/07.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Ipsum Lorem</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/08.jpg" class="image">
+										<img src="images/gallery/thumbs/08.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Magna Risus</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/09.jpg" class="image">
+										<img src="images/gallery/thumbs/09.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Tempus Dolor</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/10.jpg" class="image">
+										<img src="images/gallery/thumbs/10.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Sed Etiam</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/11.jpg" class="image">
+										<img src="images/gallery/thumbs/11.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Magna Lorem</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+								<article>
+									<a href="images/gallery/fulls/12.jpg" class="image">
+										<img src="images/gallery/thumbs/12.jpg" alt="" />
+									</a>
+									<div class="caption">
+										<h3>Ipsum Dolor</h3>
+										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>
+										<ul class="actions fixed">
+											<li><span class="button small">Details</span></li>
+										</ul>
+									</div>
+								</article>
+							</div>
 
-    <div id="loadingOverlay" style="display: none;">
-        <img src="assets/icons/load.gif" alt="Loading...">
-    </div>
-</body>
+					</section>
+
+				<!-- Six -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>Ipsum sed consequat</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+							<div class="items style1 medium onscroll-fade-in">
+								<section>
+									<span class="icon style2 major fa-gem"></span>
+									<h3>Lorem</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-save"></span>
+									<h3>Ipsum</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-chart-bar"></span>
+									<h3>Dolor</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-wifi"></span>
+									<h3>Amet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-cog"></span>
+									<h3>Magna</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon style2 major fa-paper-plane"></span>
+									<h3>Tempus</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-desktop"></span>
+									<h3>Aliquam</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-sync-alt"></span>
+									<h3>Elit</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-hashtag"></span>
+									<h3>Morbi</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-bolt"></span>
+									<h3>Turpis</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-envelope"></span>
+									<h3>Ultrices</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+								<section>
+									<span class="icon solid style2 major fa-leaf"></span>
+									<h3>Risus</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+								</section>
+							</div>
+						</div>
+					</section>
+
+				<!-- Seven -->
+					<section class="wrapper style1 align-center">
+						<div class="inner medium">
+							<h2>Get in touch</h2>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" value="" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" value="" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions special">
+									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
